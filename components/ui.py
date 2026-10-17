@@ -39,7 +39,7 @@ def sidebar():
         st.caption("SG · US · UK · KR · JP · HK · CN")
         st.divider()
         st.caption("Prototype build · Verify data before use")
-        if st.user.is_logged_in:
+        if st.user.get("is_logged_in", False):
             st.caption(f"Signed in: {st.user.get('email', 'user')}")
             if st.button("Sign out", use_container_width=True):
                 st.logout()
